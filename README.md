@@ -89,6 +89,9 @@ syndata_eval_df = evaluate_al
 l_columns(real_data, synthetic_data)  # 注意順序！ 真實資料放前面，合成資料放後面
 ```
 
+SDV 套件提供的視覺化 Quality Report
+![](img/demo_quality_report.png)
+
 可視覺化比較欄位
 ![](img/demo_compare_numeric.png)
 
