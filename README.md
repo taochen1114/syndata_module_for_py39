@@ -107,7 +107,6 @@ cmd.sh:
 
 ```shell
 echo "without chunking"
-
 python syndata_generator.py \
     --input_syn_model output/syn_model_GaussianCopula.pkl \
     --output_fpath output/syn_data_1K.csv \
