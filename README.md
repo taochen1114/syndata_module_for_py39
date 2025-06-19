@@ -98,5 +98,37 @@ SDV 套件提供的視覺化 Quality Report
 ![](img/demo_compare_categorical.png)
 
 
+### 4. 使用合成資料產生器模組 CMD
+
+* 使用模組 [syndata_generator.py](syndata_generator.py)
+* 參考指令 [cmd.sh](cmd.sh)
+
+cmd.sh:
+
+```shell
+echo "without chunking"
+
+python syndata_generator.py \
+    --input_syn_model output/syn_model_GaussianCopula.pkl \
+    --output_fpath output/syn_data_1K.csv \
+    --num_rows 1000 \
+    --save_output
 
 
+
+echo "with chunking"
+python syndata_generator.py \
+    --input_syn_model output/syn_model_GaussianCopula.pkl \
+    --output_fpath output/syn_data_10M.csv \
+    --num_rows 10000000 \
+    --save_output \
+    --use_chunk \
+    --chunk_size 1000000
+
+```
+注意： 
+**--chunk_size 數字必須小於 --num_rows**
+
+例: num_rows 1 千萬，chunk_size 可以設為 1 百萬
+
+chunk_size 最大值取決於系統記憶體大小可負荷範圍
