@@ -133,3 +133,28 @@ python syndata_generator.py \
 例: num_rows 1 千萬，chunk_size 可以設為 1 百萬
 
 chunk_size 最大值取決於系統記憶體大小可負荷範圍
+
+
+## 測試生成 1+ 億筆資料
+
+### 測試設定與總花費時間
+* 測試主機 EC2 server：c6i.4xlarge
+* 測試資料集：**House Prices - Advanced Regression Techniques**
+https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data
+* 資料欄位數：81 
+* 測試步驟：
+    1. 使用合成資料模型訓練模組針對 data.csv 訓練合成資料模型檔 
+    2. 使用 合成資料模型檔搭配 Chunk 設定生成 一億兩千萬筆資料
+* 資料筆數設定：num_rows 120000000 (1.2億)
+* chunk 大小數：chunk_size 5000000 (500萬)
+* 總時間：29688 秒，(約 8 hr 15 min)
+
+![](img/demo_gen_big_data_testing.png)
+
+### CPU 記憶體使用率
+* CPU Memory 會是限制 Chunk size 最大可以設定多少的關鍵
+* chunk_size: 5000000 
+* memory cost: 約 26GB 左右
+![](img/demo_cpu_usage.png)
+
+
