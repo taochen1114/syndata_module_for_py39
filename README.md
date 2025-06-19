@@ -24,10 +24,13 @@ pip install matplotlib==3.9.4
 
 ## 使用步驟
 
-測試範例資料
-form https://www.kaggle.com/c/boston-housing/overview
+* 測試範例資料集：**House Prices - Advanced Regression Techniques**
+https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data
 
-放在 input/data.csv
+    * 資料欄位數：81 
+    * 放在 input/data.csv
+    * data shape: (1314, 81)
+
 
 ### 1. 訓練合成資料產生器
 使用 `syndata_model_train_py36.ipynb`
