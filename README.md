@@ -98,7 +98,7 @@ SDV 套件提供的視覺化 Quality Report
 ![](img/demo_compare_categorical.png)
 
 
-### 4. 使用合成資料產生器模組 CMD
+### 4. 使用合成資料產生器模組之 sample command
 
 * 使用模組 [syndata_generator.py](syndata_generator.py)
 * 參考指令 [cmd.sh](cmd.sh)
@@ -113,7 +113,6 @@ python syndata_generator.py \
     --output_fpath output/syn_data_1K.csv \
     --num_rows 1000 \
     --save_output
-
 
 
 echo "with chunking"
